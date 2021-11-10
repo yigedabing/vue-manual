@@ -24,6 +24,6 @@ export default {
   align-items: center;
   padding: 10px 0;
   background-color: #963;
-  color: #fff;
+  color: red;
 }
 </style>

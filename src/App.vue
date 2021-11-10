@@ -25,7 +25,7 @@ export default {
       this.msg = Math.random();
     },
     login() {
-      console.log('login');
+      console.log('login....');
     },
   },
 };
