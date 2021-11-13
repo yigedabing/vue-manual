@@ -35,10 +35,17 @@ module.exports = {
       },
       {
         test: /\.(sc|c)ss$/i,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {},
+          },
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
+        test: /\.(jpeg|png|jpg|gif|webp|svg|ttf)$/i,
         type: 'javascript/auto',
         use: [
           {

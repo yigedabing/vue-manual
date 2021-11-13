@@ -41,6 +41,14 @@
         <li class="bgc-4"></li>
       </ul>
     </section>
+    <section class="font">
+      <h1>字体图标</h1>
+      <i class="iconfont icon-add"></i>
+      <i class="iconfont icon-add-circle"></i>
+      <i class="iconfont icon-file-delete"></i>
+      <i class="iconfont icon-file-add"></i>
+      <i class="iconfont icon-setting"></i>
+    </section>
   </div>
 </template>
 
@@ -112,6 +120,14 @@ export default {
     }
     .bgc-4 {
       background: url(./assets/images/21.jpeg) center/contain no-repeat;
+    }
+  }
+  .font {
+    i {
+      color: red;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 20px;
     }
   }
 }
