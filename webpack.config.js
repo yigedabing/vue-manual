@@ -34,12 +34,22 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'],
+        test: /\.(sc|c)ss$/i,
+        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.scss$/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
+        type: 'javascript/auto',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[hash:8].[name].[ext]',
+              limit: 1024 * 8,
+              esModule: false,
+            },
+          },
+        ],
       },
     ],
   },

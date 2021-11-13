@@ -5,6 +5,42 @@
     </hello-world>
     <div class="msg">{{ msg }}</div>
     <button class="button" @click="update">更新信息</button>
+
+    <section>
+      <h1>页面通过img标签引入图片资源</h1>
+      <ul class="image-list">
+        <li><img src="./assets/images/1.jpeg" /></li>
+        <li><img src="./assets/images/2.jpeg" /></li>
+        <li><img src="./assets/images/3.jpeg" /></li>
+        <li><img src="./assets/images/4.jpeg" /></li>
+        <li><img src="./assets/images/5.svg" /></li>
+        <li><img src="./assets/images/6.gif" /></li>
+        <li><img src="./assets/images/7.gif" /></li>
+        <li><img src="./assets/images/8.png" /></li>
+        <li><img src="./assets/images/9.jpeg" /></li>
+        <li><img src="./assets/images/10.jpeg" /></li>
+        <li><img src="./assets/images/11.png" /></li>
+        <li><img src="./assets/images/12.webp" /></li>
+        <li><img src="./assets/images/13.webp" /></li>
+        <li><img src="./assets/images/14.png" /></li>
+        <li><img src="./assets/images/15.webp" /></li>
+        <li><img src="./assets/images/16.jpeg" /></li>
+        <li><img src="./assets/images/17.jpeg" /></li>
+        <li><img src="./assets/images/18.png" /></li>
+        <li><img src="./assets/images/19.svg" /></li>
+        <li><img src="./assets/images/20.png" /></li>
+        <li><img src="./assets/images/21.jpeg" /></li>
+      </ul>
+    </section>
+    <section>
+      <h1>设置背景图片</h1>
+      <ul class="bgc-image">
+        <li class="bgc-1"></li>
+        <li class="bgc-2"></li>
+        <li class="bgc-3"></li>
+        <li class="bgc-4"></li>
+      </ul>
+    </section>
   </div>
 </template>
 
@@ -25,7 +61,7 @@ export default {
       this.msg = Math.random();
     },
     login() {
-      console.log('login....');
+      console.log('login');
     },
   },
 };
@@ -43,6 +79,39 @@ export default {
     .msg {
       margin: 10px;
       font-size: 20px;
+    }
+  }
+  .image-list {
+    background-color: #dedede;
+    display: flex;
+    flex-flow: row wrap;
+    img {
+      width: 100px;
+      margin: 10px;
+      padding: 4px;
+      border: 1px solid red;
+    }
+  }
+  .bgc-image {
+    display: flex;
+    justify-content: space-between;
+    li {
+      width: 100px;
+      height: 100px;
+    }
+    .bgc-1 {
+      width: 100px;
+      height: 100px;
+      background: url(./assets/images/1.jpeg) center/contain no-repeat;
+    }
+    .bgc-2 {
+      background: url(./assets/images/6.gif) center/contain no-repeat;
+    }
+    .bgc-3 {
+      background: url(./assets/images/8.png) center/contain no-repeat;
+    }
+    .bgc-4 {
+      background: url(./assets/images/21.jpeg) center/contain no-repeat;
     }
   }
 }
