@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <hello-world :title="title">
-      <button slot="button" @click="login">登陆</button>
+      <el-button type="primary" slot="button" @click="login">登陆</el-button>
     </hello-world>
     <div class="msg">{{ msg }}</div>
-    <button class="button" @click="update">更新信息</button>
+    <el-button type="primary" size="small" class="button" @click="update">更新信息</el-button>
 
     <section>
       <h1>页面通过img标签引入图片资源</h1>
@@ -77,18 +77,6 @@
 
 <style scoped lang="scss">
   #app {
-    .button {
-      padding: 10px;
-      font-size: 16px;
-      color: #369;
-      background-color: blue;
-      margin: 20px 0;
-      color: #fff;
-      .msg {
-        margin: 10px;
-        font-size: 20px;
-      }
-    }
     .image-list {
       background-color: #dedede;
       display: flex;
