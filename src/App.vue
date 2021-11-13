@@ -53,82 +53,82 @@
 </template>
 
 <script>
-import helloWorld from './components/hello-wrold.vue';
+  import helloWorld from './components/hello-wrold.vue';
 
-export default {
-  name: 'app',
-  components: { helloWorld },
-  data() {
-    return {
-      title: '欢迎王者归来！',
-      msg: Math.random(),
-    };
-  },
-  methods: {
-    update() {
-      this.msg = Math.random();
+  export default {
+    name: 'app',
+    components: { helloWorld },
+    data() {
+      return {
+        title: '欢迎王者归来！',
+        msg: Math.random(),
+      };
     },
-    login() {
-      console.log('login');
+    methods: {
+      update() {
+        this.msg = Math.random();
+      },
+      login() {
+        console.log('login');
+      },
     },
-  },
-};
+  };
 </script>
 
 <style scoped lang="scss">
-#app {
-  .button {
-    padding: 10px;
-    font-size: 16px;
-    color: #369;
-    background-color: blue;
-    margin: 20px 0;
-    color: #fff;
-    .msg {
-      margin: 10px;
-      font-size: 20px;
+  #app {
+    .button {
+      padding: 10px;
+      font-size: 16px;
+      color: #369;
+      background-color: blue;
+      margin: 20px 0;
+      color: #fff;
+      .msg {
+        margin: 10px;
+        font-size: 20px;
+      }
+    }
+    .image-list {
+      background-color: #dedede;
+      display: flex;
+      flex-flow: row wrap;
+      img {
+        width: 100px;
+        margin: 10px;
+        padding: 4px;
+        border: 1px solid red;
+      }
+    }
+    .bgc-image {
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 100px;
+        height: 100px;
+      }
+      .bgc-1 {
+        width: 100px;
+        height: 100px;
+        background: url(./assets/images/1.jpeg) center/contain no-repeat;
+      }
+      .bgc-2 {
+        background: url(./assets/images/6.gif) center/contain no-repeat;
+      }
+      .bgc-3 {
+        background: url(./assets/images/8.png) center/contain no-repeat;
+      }
+      .bgc-4 {
+        background: url(./assets/images/21.jpeg) center/contain no-repeat;
+      }
+    }
+    .font {
+      i {
+        color: red;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px;
+      }
     }
   }
-  .image-list {
-    background-color: #dedede;
-    display: flex;
-    flex-flow: row wrap;
-    img {
-      width: 100px;
-      margin: 10px;
-      padding: 4px;
-      border: 1px solid red;
-    }
-  }
-  .bgc-image {
-    display: flex;
-    justify-content: space-between;
-    li {
-      width: 100px;
-      height: 100px;
-    }
-    .bgc-1 {
-      width: 100px;
-      height: 100px;
-      background: url(./assets/images/1.jpeg) center/contain no-repeat;
-    }
-    .bgc-2 {
-      background: url(./assets/images/6.gif) center/contain no-repeat;
-    }
-    .bgc-3 {
-      background: url(./assets/images/8.png) center/contain no-repeat;
-    }
-    .bgc-4 {
-      background: url(./assets/images/21.jpeg) center/contain no-repeat;
-    }
-  }
-  .font {
-    i {
-      color: red;
-      font-size: 20px;
-      font-weight: 700;
-      margin: 20px;
-    }
-  }
-}
 </style>
