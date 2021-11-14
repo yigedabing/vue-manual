@@ -18,6 +18,7 @@ module.exports = {
     publicPath: '/',
     chunkFilename: 'js/[name].js',
     clean: true,
+    assetModuleFilename: 'images/[name][ext][query]',
   },
   module: {
     rules: [
@@ -35,29 +36,19 @@ module.exports = {
         ],
       },
       {
-        test: /\.(sc|c)ss$/i,
-        use: [
-          'vue-style-loader',
-          {
-            loader: 'css-loader',
-            options: {},
-          },
-          'sass-loader',
-        ],
+        test: /\.(less|css)$/i,
+        use: ['vue-style-loader', 'css-loader', 'less-loader'],
       },
       {
-        test: /\.(jpeg|png|jpg|gif|webp|svg|ttf)$/i,
-        type: 'javascript/auto',
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[hash:8].[name].[ext]',
-              limit: 1024 * 8,
-              esModule: false,
-            },
-          },
-        ],
+        test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
+        type: 'asset',
+      },
+      {
+        test: /\.ttf$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font/[name][ext][query]',
+        },
       },
     ],
   },

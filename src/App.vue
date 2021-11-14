@@ -75,7 +75,7 @@
   };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   #app {
     .image-list {
       background-color: #dedede;
