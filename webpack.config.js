@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,6 +12,7 @@ module.exports = {
     static: 'dist',
     port: 9000,
     hot: true,
+    historyApiFallback: true,
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,6 +21,11 @@ module.exports = {
     chunkFilename: 'js/[name].js',
     clean: true,
     assetModuleFilename: 'images/[name][ext][query]',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
@@ -45,10 +52,16 @@ module.exports = {
       },
       {
         test: /\.ttf$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'font/[name][ext][query]',
-        },
+        type: 'javascript/auto',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+              name: 'font/[name][ext][query]',
+            },
+          },
+        ],
       },
     ],
   },
@@ -57,6 +70,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '手动创建vue3项目',
       template: path.resolve(__dirname, 'public/index.html'),
+      favicon: './public/favicon.ico',
     }),
   ],
 };
