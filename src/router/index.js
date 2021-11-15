@@ -7,12 +7,12 @@ const routes = [
   {
     name: '登录',
     path: '/login',
-    component: () => import('../views/login/login.vue'),
+    component: () => import('@/views/login/login.vue'),
   },
   {
     name: '第二期',
     path: '/page-v2',
-    component: () => import('../views/page-v2/page-v2.vue'),
+    component: () => import('@/views/page-v2/page-v2.vue'),
   },
   { path: '*', redirect: '/login' },
 ];

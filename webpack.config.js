@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -12,6 +11,7 @@ module.exports = {
     static: 'dist',
     port: 9000,
     hot: true,
+    // 解决history模式下页面刷新404现象
     historyApiFallback: true,
   },
   output: {
@@ -19,7 +19,9 @@ module.exports = {
     filename: 'js/[name].js',
     publicPath: '/',
     chunkFilename: 'js/[name].js',
+    // 打包前清除dist目录下的资源文件
     clean: true,
+    // 图片输出文件名
     assetModuleFilename: 'images/[name][ext][query]',
   },
   resolve: {
@@ -46,6 +48,7 @@ module.exports = {
         test: /\.(less|css)$/i,
         use: ['vue-style-loader', 'css-loader', 'less-loader'],
       },
+      // webpack@5资源模块
       {
         test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
         type: 'asset',
@@ -58,6 +61,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               esModule: false,
+              // 字体图标输出文件名
               name: 'font/[name].[ext][query]',
             },
           },
