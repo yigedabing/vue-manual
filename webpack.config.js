@@ -15,7 +15,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'js/[name].js',
     publicPath: '/',
     chunkFilename: 'js/[name].js',
@@ -24,7 +24,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   module: {
@@ -51,14 +51,14 @@ module.exports = {
         type: 'asset',
       },
       {
-        test: /\.ttf$/i,
+        test: /\.(ttf|woff)$/i,
         type: 'javascript/auto',
         use: [
           {
             loader: 'file-loader',
             options: {
               esModule: false,
-              name: 'font/[name][ext][query]',
+              name: 'font/[name].[ext][query]',
             },
           },
         ],
@@ -69,8 +69,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: '手动创建vue3项目',
-      template: path.resolve(__dirname, 'public/index.html'),
-      favicon: './public/favicon.ico',
+      template: path.resolve(__dirname, './public/index.html'),
+      favicon: path.resolve(__dirname, './public/favicon.ico'),
     }),
   ],
 };
