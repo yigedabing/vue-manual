@@ -66,6 +66,11 @@ module.exports = {
             },
           },
         ],
+        // vue-loader不兼容
+        // type: 'asset/resource',
+        // generator: {
+        //   filename: 'font/[hash][ext][query]',
+        // },
       },
     ],
   },
