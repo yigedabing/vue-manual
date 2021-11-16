@@ -50,7 +50,7 @@ module.exports = merge(common, {
             options: {
               esModule: false,
               // 字体图标输出文件名
-              name: 'font/[name].[ext][query]',
+              name: 'fonts/[name].[ext]',
             },
           },
         ],

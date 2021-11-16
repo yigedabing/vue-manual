@@ -1,14 +1,15 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
     filename: 'js/[name].[contenthash:8].js',
-    chunkFilename: 'js/chunk-[chunkhash:8].[contenthash:8].js',
-    assetModuleFilename: 'images/[contenthash:8][ext][query]',
+    chunkFilename: 'js/[name].[contenthash:8].js',
+    assetModuleFilename: 'images/[name].[hash:8][ext]',
   },
   module: {
     rules: [
@@ -27,7 +28,16 @@ module.exports = merge(common, {
       },
       {
         test: /\.(less|css)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+          'less-loader',
+        ],
       },
       // webpack@5资源模块
       {
@@ -35,7 +45,7 @@ module.exports = merge(common, {
         type: 'asset',
       },
       {
-        test: /\.(ttf|woff)$/i,
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'javascript/auto',
         use: [
           {
@@ -43,7 +53,7 @@ module.exports = merge(common, {
             options: {
               esModule: false,
               // 字体图标输出文件名
-              name: 'font/[name].[ext][query]',
+              name: 'fonts/[name].[hash:8].[ext]',
             },
           },
         ],
@@ -53,7 +63,27 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[chunkhash:8].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
     }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'chunk-vendors',
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          chunks: 'initial',
+        },
+        common: {
+          name: 'chunk-common',
+          minChunks: 2,
+          priority: -20,
+          chunks: 'initial',
+          reuseExistingChunk: true,
+        },
+      },
+    },
+    minimizer: [new CssMinimizerPlugin()],
+  },
 });
