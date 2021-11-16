@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   output: {
     filename: 'js/[name].[contenthash:8].js',
-    chunkFilename: 'js/[chunkhash:8].[contenthash:8].js',
+    chunkFilename: 'js/chunk-[chunkhash:8].[contenthash:8].js',
     assetModuleFilename: 'images/[contenthash:8][ext][query]',
   },
   module: {
