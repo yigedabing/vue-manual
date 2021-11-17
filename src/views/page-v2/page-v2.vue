@@ -1,7 +1,7 @@
 <template>
   <div class="page-v2">
     <hello-world :title="title">
-      <el-button type="primary" slot="button" @click="login">登陆</el-button>
+      <el-button type="primary" slot="button" @click="goNewPage">去第三期</el-button>
     </hello-world>
     <div class="msg">{{ msg }}</div>
     <el-button type="primary" size="small" class="button" @click="update">更新信息</el-button>
@@ -68,8 +68,8 @@
       update() {
         this.msg = Math.random();
       },
-      login() {
-        this.$router.push('/page-v2');
+      goNewPage() {
+        this.$router.push('/page-v3');
       },
     },
   };
