@@ -77,9 +77,17 @@ module.exports = merge(common, {
     },
     // 对于动态导入模块，按需加载的chunk
     splitChunks: {
+      chunks: 'async',
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
       cacheGroups: {
         vendors: {
           name: 'chunk-vendors',
+          // 控制此缓存组选择的模块
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: 'initial',
