@@ -67,12 +67,15 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    // 使用webpack内置TerserPlugin压缩bundle
     minimize: true,
     removeAvailableModules: false,
     chunkIds: 'deterministic',
+    // 在所有生成chunk之间共享的运行时文件
     runtimeChunk: {
-      name: (entryPoint) => `runtime-${entryPoint.name}`,
+      name: 'runtime',
     },
+    // 对于动态导入模块，按需加载的chunk
     splitChunks: {
       cacheGroups: {
         vendors: {
