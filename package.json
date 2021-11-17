@@ -4,8 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev-todo": "webpack serve --config webpack.config.js --progress",
-    "build-todo": "webpack --config webpack.config.js --progress",
     "dev": "webpack serve --config ./build/webpack.dev.js --progress",
     "build": "webpack --config ./build/webpack.prod.js --progress"
   },

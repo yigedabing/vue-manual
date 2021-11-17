@@ -89,6 +89,7 @@ module.exports = merge(common, {
         },
       },
     },
+    // '...' 使用webpack@5默认js压缩工具 TerserPlugin
     minimizer: [new CssMinimizerPlugin(), '...'],
   },
 });
