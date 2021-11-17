@@ -67,7 +67,11 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    minimize: true,
     chunkIds: 'deterministic',
+    runtimeChunk: {
+      name: 'runtime',
+    },
     splitChunks: {
       cacheGroups: {
         vendors: {
@@ -85,6 +89,6 @@ module.exports = merge(common, {
         },
       },
     },
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [new CssMinimizerPlugin(), '...'],
   },
 });
