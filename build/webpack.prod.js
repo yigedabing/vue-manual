@@ -68,9 +68,10 @@ module.exports = merge(common, {
   ],
   optimization: {
     minimize: true,
+    removeAvailableModules: false,
     chunkIds: 'deterministic',
     runtimeChunk: {
-      name: 'runtime',
+      name: (entryPoint) => `runtime-${entryPoint.name}`,
     },
     splitChunks: {
       cacheGroups: {

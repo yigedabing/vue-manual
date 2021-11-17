@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
+      minify: false,
       title: '手动创建vue3项目',
       template: path.resolve(__dirname, '../public/index.html'),
       favicon: path.resolve(__dirname, '../public/favicon.ico'),
