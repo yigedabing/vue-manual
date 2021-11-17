@@ -67,6 +67,7 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    chunkIds: 'deterministic',
     splitChunks: {
       cacheGroups: {
         vendors: {

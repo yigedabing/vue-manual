@@ -57,4 +57,7 @@ module.exports = merge(common, {
       },
     ],
   },
+  optimization: {
+    chunkIds: 'named',
+  },
 });

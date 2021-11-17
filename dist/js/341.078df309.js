@@ -66,7 +66,7 @@ var staticRenderFns = [
           _c("img", { attrs: { src: __webpack_require__(1488) } }),
         ]),
         _c("li", [
-          _c("img", { attrs: { src: __webpack_require__(3984) } }),
+          _c("img", { attrs: { src: __webpack_require__(2196) } }),
         ]),
         _c("li", [
           _c("img", { attrs: { src: __webpack_require__(3916) } }),
@@ -410,7 +410,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFs
 
 /***/ }),
 
-/***/ 3984:
+/***/ 2196:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "images/2.e82c7a65.jpeg";
@@ -481,4 +481,4 @@ module.exports = __webpack_require__.p + "images/9.5d9e553f.jpeg";
 /***/ })
 
 }]);
-//# sourceMappingURL=341.3a004b1e.js.map
+//# sourceMappingURL=341.078df309.js.map

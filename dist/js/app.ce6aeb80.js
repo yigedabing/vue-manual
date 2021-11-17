@@ -118,17 +118,31 @@ const store = new vuex_esm/* default.Store */.ZP.Store({
 // EXTERNAL MODULE: ../node_modules/element-ui/lib/element-ui.common.js
 var element_ui_common = __webpack_require__(6396);
 var element_ui_common_default = /*#__PURE__*/__webpack_require__.n(element_ui_common);
+// EXTERNAL MODULE: ../node_modules/xe-utils/index.js
+var xe_utils = __webpack_require__(6391);
+// EXTERNAL MODULE: ../node_modules/vxe-table/lib/index.common.js
+var index_common = __webpack_require__(2751);
+var index_common_default = /*#__PURE__*/__webpack_require__.n(index_common);
 ;// CONCATENATED MODULE: ../src/main.js
 
 
 
 
 
+// 公共样式
 
 
+
+// element-ui全局安装
 
 
 vue_runtime_esm["default"].use((element_ui_common_default()));
+
+// vxe-table全局安装
+
+
+
+vue_runtime_esm["default"].use((index_common_default()));
 
 const app = new vue_runtime_esm["default"]({
   el: '#app',
@@ -247,7 +261,7 @@ window.__app__ = app;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + "." + {"334":"e6c89d60","341":"3a004b1e"}[chunkId] + ".js";
+/******/ 			return "js/" + chunkId + "." + {"334":"e6c89d60","341":"078df309"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -511,4 +525,4 @@ window.__app__ = app;
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=app.0db1f825.js.map
+//# sourceMappingURL=app.ce6aeb80.js.map

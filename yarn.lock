@@ -3312,6 +3312,11 @@ vuex@^3.6.2:
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
   integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
 
+vxe-table@^3.4.6:
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/vxe-table/-/vxe-table-3.4.6.tgz#ed2aba0a81c86c0ae8639b960f01bc9f806c39a0"
+  integrity sha512-W/Fh9oX8i+tb60AK//S74hzXtSYGlptaLVuneGHN5vJC5PwU3iN48MZnV7fyfd+s390rxjlNcYcuL5n1aMXSuA==
+
 watchpack@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-2.2.0.tgz#47d78f5415fe550ecd740f99fe2882323a58b1ce"
@@ -3485,6 +3490,11 @@ ws@^8.1.0:
   version "8.2.3"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.3.tgz#63a56456db1b04367d0b721a0b80cae6d8becbba"
   integrity sha512-wBuoj1BDpC6ZQ1B7DWQBYVLphPWkm8i9Y0/3YdHjHKHiohOJ1ws+3OccDWtH+PoC9DZD5WOTrJvNbWvjS6JWaA==
+
+xe-utils@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/xe-utils/-/xe-utils-3.4.0.tgz#b5b52990858298e815763c46bada5741ebab15ed"
+  integrity sha512-V2o/Ew/iXBduWbj0ixqA7atUe4HFxo0HcpBsxnrLHbKVspfZ2O/7+m325AHcN2xxPZtBZGQVg1w/cQ5Q8WmcTA==
 
 yallist@^2.1.2:
   version "2.1.2"
