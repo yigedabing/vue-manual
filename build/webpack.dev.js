@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -12,10 +13,14 @@ module.exports = merge(common, {
   },
   devServer: {
     static: 'dist',
+    compress: false,
     port: 9000,
     hot: true,
     // 解决history模式下页面刷新404现象
     historyApiFallback: true,
+    client: {
+      progress: true,
+    },
   },
   module: {
     rules: [
@@ -57,6 +62,14 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: [`=================== 开发环境编译成功！ =================`],
+      },
+      clearConsole: true,
+    }),
+  ],
   optimization: {
     chunkIds: 'named',
   },

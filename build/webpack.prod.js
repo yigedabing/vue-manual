@@ -12,6 +12,7 @@ module.exports = merge(common, {
     assetModuleFilename: 'images/[name].[hash:8][ext]',
   },
   module: {
+    noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
     rules: [
       {
         test: /\.vue$/,
