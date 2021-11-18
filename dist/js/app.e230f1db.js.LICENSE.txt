@@ -1,0 +1,11 @@
+/*! @/views/login/login.vue */
+
+/*! @/views/page-v2/page-v2.vue */
+
+/*! @/views/page-v3/page-v3.vue */
+
+/*! import() */
+
+/*!**********************************!*\
+  !*** ../src/main.js + 7 modules ***!
+  \**********************************/
