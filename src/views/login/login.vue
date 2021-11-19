@@ -1,22 +1,31 @@
 <template>
   <div class="login">
-    <el-button type="primary" @click="login">登录</el-button>
-    <!-- 图标使用 -->
-    <div class="icon">
-      <i class="el-icon-edit"></i>
-      <i class="el-icon-share"></i>
-      <i class="el-icon-delete"></i>
-    </div>
-    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+    <el-button type="primary" @click="login">
+      <span>登录</span>
+      <i class="el-icon-video-play"></i>
+    </el-button>
+    <pre-loader :isLoading="isLoading"></pre-loader>
   </div>
 </template>
 
 <script>
+  import preLoader from '@/components/pre-loader/pre-loader.vue';
+
   export default {
     name: 'login',
+    components: { preLoader },
+    data() {
+      return {
+        isLoading: false,
+      };
+    },
     methods: {
       login() {
-        this.$router.push('/page-v2');
+        this.isLoading = true;
+        setTimeout(() => {
+          this.isLoading = false;
+          this.$router.push('/page-v2');
+        }, 2000);
       },
     },
   };
