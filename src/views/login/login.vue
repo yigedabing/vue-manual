@@ -24,7 +24,7 @@
         this.isLoading = true;
         setTimeout(() => {
           this.isLoading = false;
-          this.$router.push('/page-v2');
+          this.$router.push('/home');
         }, 2000);
       },
     },
