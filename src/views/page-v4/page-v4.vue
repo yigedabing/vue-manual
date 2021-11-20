@@ -10,11 +10,9 @@
 
 <script>
 import * as echarts from 'echarts';
-import preLoader from '@/components/pre-loader/pre-loader.vue';
 
 export default {
   name: 'page-v4',
-  components: { preLoader },
   data() {
     return {
       isLoading: false,

@@ -10,12 +10,10 @@
 </template>
 
 <script>
-import preLoader from '@/components/pre-loader/pre-loader.vue';
 import * as echarts from 'echarts';
 
 export default {
   name: 'login',
-  components: { preLoader },
   data() {
     return {
       isLoading: false,
