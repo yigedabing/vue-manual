@@ -54,7 +54,7 @@ module.exports = merge(common, {
             options: {
               esModule: false,
               // 字体图标输出文件名
-              name: 'fonts/[name].[hash:8].[ext]',
+              name: 'fonts/[name].[contenthash:8].[ext]',
             },
           },
         ],
