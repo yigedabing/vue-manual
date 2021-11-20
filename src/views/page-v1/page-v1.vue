@@ -3,8 +3,22 @@
 </template>
 
 <script>
+  import cloneDeep from 'lodash/cloneDeep';
+
   export default {
     name: 'page-v1',
+    data() {
+      return {
+        obj: {
+          id: 1,
+          name: 'page-v1',
+        },
+      };
+    },
+    created() {
+      const copy = cloneDeep(this.obj);
+      console.log(copy);
+    },
   };
 </script>
 
