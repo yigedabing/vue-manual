@@ -10,6 +10,6 @@
 
 <style lang="less" scoped>
   .page-v1 {
-    padding: 20px;
+    padding: 10px;
   }
 </style>

@@ -7,9 +7,9 @@ module.exports = merge(common, {
   mode: 'production',
   // devtool: 'source-map',
   output: {
-    filename: 'js/[name].[hash:8].js',
-    chunkFilename: 'js/chunk-[name].[hash:8].js',
-    assetModuleFilename: 'images/[name].[hash:8][ext]',
+    filename: 'js/[name].js',
+    chunkFilename: 'js/chunk-[name].js',
+    assetModuleFilename: 'images/[name][ext]',
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
@@ -63,8 +63,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash:8].css',
-      chunkFilename: 'css/chunk-[name].[hash:8].css',
+      filename: 'css/[name].css',
+      chunkFilename: 'css/chunk-[name].css',
     }),
   ],
   optimization: {
