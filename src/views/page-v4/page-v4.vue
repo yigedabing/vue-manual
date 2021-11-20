@@ -40,8 +40,10 @@
 <style lang="less" scoped>
   .page-v4 {
     #line-echarts {
-      width: 100%;
-      height: 100%;
+      width: 800px;
+      height: 400px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
     }
   }
 </style>
