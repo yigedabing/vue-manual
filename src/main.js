@@ -18,6 +18,10 @@ import VXETable from 'vxe-table';
 import 'vxe-table/lib/style.css';
 Vue.use(VXETable);
 
+// 注册公共组件
+import preLoader from './components/pre-loader/pre-loader.vue';
+Vue.component('pre-loader', preLoader);
+
 const app = new Vue({
   el: '#app',
   router,
