@@ -8,7 +8,7 @@ module.exports = {
     app: [path.resolve(__dirname, '../src/main.js')],
   },
   // Only output errors and warnings happen
-  stats: 'errors-warnings',
+  // stats: 'errors-warnings',
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',

@@ -8,7 +8,7 @@ module.exports = merge(common, {
   // devtool: 'source-map',
   output: {
     filename: 'js/[name].[contenthash:8].js',
-    chunkFilename: 'js/[name].[contenthash:8].js',
+    chunkFilename: 'js/chunk-[name].[contenthash:8].js',
     assetModuleFilename: 'images/[name].[hash:8][ext]',
   },
   module: {
@@ -64,7 +64,7 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/chunk-[name].[contenthash:8].css',
     }),
   ],
   optimization: {

@@ -8,4 +8,8 @@
   };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+  .page-v1 {
+    padding: 20px;
+  }
+</style>
