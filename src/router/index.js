@@ -34,6 +34,11 @@ const routes = [
         path: '/page-v3',
         component: () => import('@/views/page-v3/page-v3.vue'),
       },
+      {
+        name: '第四期',
+        path: '/page-v4',
+        component: () => import('@/views/page-v4/page-v4.vue'),
+      },
     ],
   },
   { path: '*', redirect: '/home' },
