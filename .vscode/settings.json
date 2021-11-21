@@ -3,6 +3,7 @@
     "chunkhash",
     "fullhash",
     "iconfont",
-    "Parens"
+    "Parens",
+    "Prefetch"
   ]
 }
