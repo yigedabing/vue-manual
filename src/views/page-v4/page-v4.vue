@@ -37,7 +37,9 @@ export default {
   mounted() {
     const chartDom = document.getElementById('line-echarts');
     const myChart = echarts.init(chartDom);
-    myChart.setOption(this.option);
+    this.$nextTick(() => {
+      myChart.setOption(this.option);
+    });
   },
   methods: {
     showLoading() {
