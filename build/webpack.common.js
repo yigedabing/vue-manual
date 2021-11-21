@@ -5,9 +5,8 @@ const VueLoaderPlugin = require('vue-loader-plugin');
 module.exports = {
   context: path.resolve(__dirname),
   entry: {
-    app: [path.resolve(__dirname, '../src/main.js')],
+    app: ['../src/main.js'],
   },
-  // Only output errors and warnings happen
   // stats: 'errors-warnings',
   output: {
     path: path.resolve(__dirname, '../dist'),

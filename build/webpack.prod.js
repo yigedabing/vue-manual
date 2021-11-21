@@ -94,6 +94,8 @@ module.exports = merge(common, {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: 'initial',
+          // default: true
+          reuseExistingChunk: true,
         },
         common: {
           name: 'chunk-common',
