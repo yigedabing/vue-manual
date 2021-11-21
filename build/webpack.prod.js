@@ -14,21 +14,7 @@ module.exports = merge(common, {
     assetModuleFilename: 'images/[name].[contenthash:8][ext]',
   },
   module: {
-    noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
     rules: [
-      {
-        test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                whitespace: 'condense',
-              },
-            },
-          },
-        ],
-      },
       {
         test: /\.(less|css)$/i,
         use: [

@@ -25,19 +25,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                whitespace: 'condense',
-              },
-            },
-          },
-        ],
-      },
-      {
         test: /\.(less|css)$/i,
         use: ['vue-style-loader', 'css-loader', 'less-loader'],
       },

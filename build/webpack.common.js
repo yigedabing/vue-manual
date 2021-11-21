@@ -20,7 +20,22 @@ module.exports = {
     },
   },
   module: {
+    noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
     rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                whitespace: 'condense',
+              },
+              cacheDirectory: true,
+            },
+          },
+        ],
+      },
       {
         test: /\.js$/i,
         exclude: /(node_modules|bower_components)/,
@@ -29,6 +44,7 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
+            cacheDirectory: true,
           },
         },
       },
