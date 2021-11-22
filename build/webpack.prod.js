@@ -59,9 +59,7 @@ module.exports = merge(common, {
       patterns: [
         {
           from: '../public/favicon.ico',
-          to: '../dist/favicon.ico',
-          toType: 'file',
-          context: path.resolve(__dirname),
+          to: '../dist/',
         },
       ],
     }),
