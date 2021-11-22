@@ -53,10 +53,12 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
+      context: path.resolve(__dirname),
       minify: false,
       title: '手动创建vue项目',
       template: path.resolve(__dirname, '../public/index.html'),
-      favicon: path.resolve(__dirname, '../public/favicon.ico'),
+      // 使用 copy-webpack-plugin
+      // favicon: path.resolve(__dirname, '../public/favicon.ico'),
     }),
   ],
 };

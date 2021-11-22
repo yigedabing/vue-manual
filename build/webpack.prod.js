@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -53,6 +54,16 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/chunk-[name].[contenthash:8].css',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '../public/favicon.ico',
+          to: '../dist/favicon.ico',
+          toType: 'file',
+          context: path.resolve(__dirname),
+        },
+      ],
     }),
   ],
   optimization: {
