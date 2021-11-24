@@ -26,7 +26,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(less|css)$/i,
-        use: ['vue-style-loader', 'css-loader', 'less-loader'],
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
       },
       // webpack@5资源模块
       {

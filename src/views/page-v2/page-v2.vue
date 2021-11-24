@@ -82,6 +82,7 @@ export default {
 
 <style lang="less" scoped>
 .page-v2 {
+  display: grid;
   .image-list {
     background-color: #dedede;
     display: flex;
