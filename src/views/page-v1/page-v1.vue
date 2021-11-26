@@ -8,6 +8,7 @@
 <script>
 import cloneDeep from 'lodash/cloneDeep';
 import * as echarts from 'echarts';
+import { generateId } from '@/utils';
 
 export default {
   name: 'page-v1',
@@ -27,7 +28,7 @@ export default {
     const fn = () => {
       console.log('fn unused');
     };
-    console.log(copy, name, list);
+    console.log(copy, name, list, 'generateId:', generateId());
   },
   mounted() {
     const chartDom = document.getElementById('circle-echarts');

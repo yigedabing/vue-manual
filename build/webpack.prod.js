@@ -66,6 +66,7 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    usedExports: true,
     // 使用webpack内置TerserPlugin压缩bundle
     minimize: true,
     removeAvailableModules: false,
