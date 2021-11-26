@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { isPhone, isEmail } from '@/utils';
+
 export default {
   name: 'page-v5',
   data() {
@@ -25,6 +27,12 @@ export default {
         console.log(name, ':\n', list);
       };
       fn(name, list);
+    },
+    isPhone(phone) {
+      return isPhone(phone);
+    },
+    isEmail(email) {
+      return isEmail(email);
     },
   },
 };

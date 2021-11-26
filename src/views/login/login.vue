@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { isPhone } from '@/utils';
 export default {
   name: 'login',
   data() {
@@ -16,7 +17,9 @@ export default {
       isLoading: false,
     };
   },
-  mounted() {},
+  mounted() {
+    console.log(isPhone('123'));
+  },
   methods: {
     login() {
       this.isLoading = true;
