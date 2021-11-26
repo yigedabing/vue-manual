@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
-  // devtool: 'source-map',
+  devtool: 'source-map',
   output: {
     filename: 'js/[name].[contenthash:8].js',
     chunkFilename: 'js/chunk-[name].[contenthash:8].js',
