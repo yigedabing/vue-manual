@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader-plugin');
 module.exports = {
   context: path.resolve(__dirname),
   entry: {
-    app: ['../src/main.js'],
+    main: ['../src/main.js'],
   },
   // stats: 'errors-warnings',
   output: {
@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
+    extensions: ['vue', '...'],
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,

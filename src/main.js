@@ -22,8 +22,8 @@ Vue.use(VXETable);
 import preLoader from './components/pre-loader/pre-loader.vue';
 Vue.component('pre-loader', preLoader);
 
-// 引入第三方库
-import './assets/libs/jquery.js';
+// 引入第三方库 该方式直接打包至initial-chunk
+// import './assets/libs/jquery.js';
 
 const app = new Vue({
   el: '#app',
