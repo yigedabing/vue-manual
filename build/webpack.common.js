@@ -18,7 +18,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
-    extensions: ['vue', '...'],
+    extensions: ['.vue', '...'],
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
