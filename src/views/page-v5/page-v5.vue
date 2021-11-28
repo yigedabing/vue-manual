@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { isPhone, isEmail } from '@/utils';
+import { isPhone } from '@/utils';
 
 export default {
   name: 'page-v5',
