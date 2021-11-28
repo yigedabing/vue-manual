@@ -4,7 +4,8 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -56,7 +57,7 @@ module.exports = merge(common, {
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/chunk-[name].[contenthash:8].css',
     }),
-    new CopyWebpackPlugin({
+    new CopyPlugin({
       patterns: [
         {
           from: '../public/favicon.ico',
@@ -107,5 +108,6 @@ module.exports = merge(common, {
     },
     // '...' 使用webpack@5默认js压缩工具 TerserPlugin
     minimizer: [new CssMinimizerPlugin(), '...'],
+    // minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
 });
