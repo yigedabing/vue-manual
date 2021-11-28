@@ -1,7 +1,19 @@
-# webpack-vue
+# vue-manual-cli
 
-## webpack + vue 第二期
+## Project setup
+```
+yarn install
+```
 
-## 代码格式化规范参考
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-[prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
