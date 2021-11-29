@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname),
@@ -61,5 +62,7 @@ module.exports = {
       // 使用 copy-webpack-plugin
       // favicon: path.resolve(__dirname, '../public/favicon.ico'),
     }),
+    // TODO:
+    // new ESLintPlugin(),
   ],
 };
