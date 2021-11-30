@@ -56,7 +56,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = to.name;
+  document.title = to.name || 'webpack@5 + vue@2';
   next();
 });
 

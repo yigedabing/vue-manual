@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { isPhone } from '@/utils';
 export default {
   name: 'login',
