@@ -33,4 +33,5 @@ const app = new Vue({
 });
 
 // 方便控制台调试代码
+// @ts-ignore
 window.__app__ = app;

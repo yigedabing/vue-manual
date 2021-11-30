@@ -19,7 +19,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
-    extensions: ['.vue', '...'],
+    extensions: ['.ts', '.js', '.vue', '...'],
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
@@ -49,6 +49,27 @@ module.exports = {
             cacheDirectory: true,
           },
         },
+      },
+      {
+        test: /\.ts$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-runtime'],
+              cacheDirectory: true,
+            },
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              // 仅转译，加快编译速度
+              transpileOnly: true,
+            },
+          },
+        ],
       },
     ],
   },
