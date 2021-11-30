@@ -67,6 +67,7 @@ module.exports = {
             options: {
               // 仅转译，加快编译速度
               transpileOnly: true,
+              appendTsxSuffixTo: ['\\.vue$'],
             },
           },
         ],

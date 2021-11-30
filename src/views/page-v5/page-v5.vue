@@ -28,7 +28,7 @@ export default {
       };
       fn(name, list);
     },
-    isPhone(phone: string) {
+    isPhone() {
       return isPhone(phone);
     },
     isEmail(email) {
