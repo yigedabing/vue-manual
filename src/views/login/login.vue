@@ -8,7 +8,7 @@
         <el-input v-model="phone"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="login">
+        <el-button type="primary" @click="submitForm">
           <span>登录</span>
           <i class="el-icon-video-play"></i>
         </el-button>
