@@ -5,23 +5,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import cloneDeep from 'lodash/cloneDeep';
 import * as echarts from 'echarts';
 import { generateId } from '@/utils';
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'page-v1',
-  data() {
-    return {
-      obj: {
-        id: 1,
-        name: 'page-v1',
-      },
-      list: ['1', 2, { id: 1 }],
-    };
-  },
+@Component
+export default class PageV1 extends Vue {
+  obj = {
+    id: 1,
+    name: 'page-v1',
+  };
+  list = ['1', 2, { id: 1 }];
+
   created() {
+    console.log('created!');
     const copy = cloneDeep(this.obj);
     const { name } = this.obj;
     const list = [...this.list];
@@ -29,8 +28,10 @@ export default {
       console.log('fn unused');
     };
     console.log(copy, name, list, 'generateId:', generateId());
-  },
+  }
+
   mounted() {
+    console.log('mounted');
     const chartDom = document.getElementById('circle-echarts');
     const myChart = chartDom && echarts.init(chartDom);
     let option;
@@ -72,8 +73,8 @@ export default {
     };
 
     option && myChart?.setOption(option);
-  },
-};
+  }
+}
 </script>
 
 <style lang="less" scoped>

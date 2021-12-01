@@ -25,7 +25,6 @@ export default class Login extends Vue {
 
     this.isLoading = true;
     const isLogin = await this.login();
-    console.log('isLogin', isLogin);
     this.isLoading = false;
 
     if (isLogin) {
@@ -43,7 +42,9 @@ export default class Login extends Vue {
   private async login(): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(Math.random() > 0.3);
+        const isOk = Math.random() > 0.2;
+        console.log('isOk= ', isOk);
+        resolve(isOk);
       }, 2000);
     });
   }

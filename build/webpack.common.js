@@ -18,7 +18,6 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      vue$: 'vue/dist/vue.runtime.esm.js',
     },
     extensions: ['.ts', '.js', '.vue', '...'],
   },
@@ -63,10 +62,8 @@ module.exports = {
             options: {
               // 仅转译，加快编译速度
               transpileOnly: true,
-              // appendTsSuffixTo: [/\.vue$/],
-              // transpileOnly: true,
-              // experimentalWatchApi: true,
-              // happyPackMode: true,
+              // .vue文件添加ts后缀，否则无法正常识别单文件vue中的script标签中的代码
+              appendTsSuffixTo: [/\.vue$/],
             },
           },
         ],
