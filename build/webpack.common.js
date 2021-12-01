@@ -18,6 +18,7 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src'),
+      vue$: 'vue/dist/vue.runtime.esm.js',
     },
     extensions: ['.ts', '.js', '.vue', '...'],
   },
@@ -46,7 +47,6 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
-            cacheDirectory: true,
           },
         },
       },
@@ -56,17 +56,13 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-transform-runtime'],
-              cacheDirectory: true,
-            },
           },
           {
             loader: 'ts-loader',
             options: {
               // 仅转译，加快编译速度
               transpileOnly: true,
+              appendTsSuffixTo: [/\.vue$/],
             },
           },
         ],
@@ -80,8 +76,6 @@ module.exports = {
       minify: false,
       title: '手动创建vue项目',
       template: path.resolve(__dirname, '../public/index.html'),
-      // 使用 copy-webpack-plugin
-      // favicon: path.resolve(__dirname, '../public/favicon.ico'),
     }),
     // TODO:
     // new ESLintPlugin(),

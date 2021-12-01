@@ -18,34 +18,38 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
 import { isPhone } from '@/utils';
-export default {
-  name: 'login',
-  data() {
-    return {
-      isLoading: false,
-      userName: '',
-      phone: '',
-    };
-  },
-  mounted() {},
-  methods: {
-    login() {
-      if (!isPhone(this.phone)) {
-        this.$message.error('手机号错误！');
-        this.isLoading = false;
-        return;
-      }
 
-      this.isLoading = true;
-      setTimeout(() => {
-        this.isLoading = false;
-        this.$router.push('/home');
-      }, 2000);
-    },
-  },
-};
+@Component
+export default class Login extends Vue {
+  isLoading = false;
+  userName = '';
+  phone = '';
+
+  mounted(): void {
+    this.say('你好， ts');
+  }
+
+  login(): void {
+    if (!isPhone(this.phone)) {
+      this.$message.error('手机号错误！');
+      this.isLoading = false;
+      return;
+    }
+
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.$router.push('/home');
+    }, 2000);
+  }
+  say(msg: string): string {
+    return `msg= ${msg}`;
+  }
+}
 </script>
 
 <style lang="less" scoped>
