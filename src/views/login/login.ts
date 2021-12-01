@@ -43,7 +43,7 @@ export default class Login extends Vue {
   private async login(): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(Math.random() > 0.8);
+        resolve(Math.random() > 0.3);
       }, 2000);
     });
   }
