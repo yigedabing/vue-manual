@@ -6,7 +6,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname),
   entry: {
-    main: ['../src/main.js'],
+    main: ['../src/main.ts'],
   },
   // stats: 'errors-warnings',
   output: {

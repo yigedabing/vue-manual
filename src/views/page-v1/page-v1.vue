@@ -32,7 +32,7 @@ export default {
   },
   mounted() {
     const chartDom = document.getElementById('circle-echarts');
-    const myChart = echarts.init(chartDom);
+    const myChart = chartDom && echarts.init(chartDom);
     let option;
 
     option = {
@@ -71,7 +71,7 @@ export default {
       ],
     };
 
-    option && myChart.setOption(option);
+    option && myChart?.setOption(option);
   },
 };
 </script>
