@@ -6,17 +6,19 @@
     "importHelpers": true,
     "moduleResolution": "node",
     "allowJs": true,
+    "checkJs": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
       "@/*": [
         "src/*"
       ]
-    },
+    }
   },
   "include": [
     "src/*.ts",
