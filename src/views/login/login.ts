@@ -8,7 +8,8 @@ export default class Login extends Vue {
   phone = '17521345099';
 
   mounted(): void {
-    this.say('你好， ts');
+    const msg = this.say('你好， ts');
+    console.log('login.ts', msg);
   }
 
   async submitForm(): Promise<void> {

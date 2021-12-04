@@ -20,18 +20,16 @@ export default class PageV1 extends Vue {
   list = ['1', 2, { id: 1 }];
 
   created() {
-    console.log('created!');
     const copy = cloneDeep(this.obj);
     const { name } = this.obj;
     const list = [...this.list];
     const fn = () => {
       console.log('fn unused');
     };
-    console.log(copy, name, list, 'generateId:', generateId());
+    console.log(copy, name, list, 'page-v1.vue generateId:', generateId());
   }
 
   mounted() {
-    console.log('mounted');
     const chartDom = document.getElementById('circle-echarts');
     const myChart = chartDom && echarts.init(chartDom);
     let option;
