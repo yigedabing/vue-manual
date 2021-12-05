@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     main: ['../src/main.ts'],
   },
-  // stats: 'errors-warnings',
+  stats: 'normal',
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
