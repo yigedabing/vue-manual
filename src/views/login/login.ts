@@ -1,4 +1,4 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import { isPhone } from '@/utils';
 
 @Component
@@ -6,6 +6,14 @@ export default class Login extends Vue {
   isLoading = false;
   userName = '张三';
   phone = '17521345099';
+
+  @Inject()
+  getTitle!: () => string;
+
+  created() {
+    const title = this.getTitle();
+    console.log(title);
+  }
 
   mounted(): void {
     const msg = this.say('你好， ts');
@@ -29,17 +37,16 @@ export default class Login extends Vue {
     this.isLoading = false;
 
     if (isLogin) {
-      this.$router.push({
-        path: '/home',
-        query: {
-          userName: this.userName,
-          phone: this.phone,
-        },
-      });
+      this.goHome();
     } else {
       this.$message.error('登录失败，请重试');
     }
   }
+
+  say(msg: string): string {
+    return `msg= ${msg}`;
+  }
+
   private async login(): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -49,7 +56,14 @@ export default class Login extends Vue {
       }, 2000);
     });
   }
-  say(msg: string): string {
-    return `msg= ${msg}`;
+
+  private goHome(): void {
+    this.$router.push({
+      path: '/home',
+      query: {
+        userName: this.userName,
+        phone: this.phone,
+      },
+    });
   }
 }
