@@ -5,27 +5,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component
-export default class App extends Vue {
-  title = 'webpack@5.62.2 + vue@2.6.14 + typescript@4.5.2';
-
-  created(): void {
-    console.log('========= App.ts created !===========');
-    // this.title = false;
-  }
-
-  mounted(): void {
-    console.log('========= App.ts mounted !===========');
-  }
-
-  update() {
-    console.log('========= App.ts update !===========');
-  }
-}
-</script>
+<script lang="ts" src="./App.ts"></script>
 
 <style scoped lang="less">
 #app {
