@@ -25,6 +25,9 @@ module.exports = merge(common, {
         test: /\.less$/i,
         use: [
           MiniCssExtractPlugin.loader,
+          // 'css-loader',
+          // 'postcss-loader',
+          // 'less-loader',
           {
             loader: 'css-loader',
             // TODO:生产环境构建有问题
