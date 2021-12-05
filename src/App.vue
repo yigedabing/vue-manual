@@ -15,6 +15,10 @@ export default class App extends Vue {
     console.log('========= App.vue created !===========');
     this.title = false;
   }
+
+  mounted(): void {
+    console.log('app.vue mounted');
+  }
 }
 </script>
 
