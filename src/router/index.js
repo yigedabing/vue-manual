@@ -4,11 +4,11 @@ import Vue from 'vue';
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   name: 'welcome to webpack vue',
-  //   path: '/',
-  //   redirect: '/login',
-  // },
+  {
+    name: 'welcome to webpack vue',
+    path: '/',
+    redirect: '/login',
+  },
   {
     name: '登录',
     path: '/login',
@@ -46,7 +46,7 @@ const routes = [
       },
     ],
   },
-  // { path: '*', redirect: '/home' },
+  { path: '*', redirect: '/home' },
 ];
 
 const router = new VueRouter({
