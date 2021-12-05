@@ -33,7 +33,7 @@ module.exports = {
               compilerOptions: {
                 whitespace: 'condense',
               },
-              // cacheDirectory: true,
+              cacheDirectory: true,
             },
           },
         ],
@@ -46,7 +46,7 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
-            // cacheDirectory: true,
+            cacheDirectory: true,
           },
         },
       },
@@ -64,6 +64,7 @@ module.exports = {
               transpileOnly: true,
               // .vue文件添加ts后缀，否则无法正常识别单文件vue中的script标签中的代码
               appendTsSuffixTo: [/\.vue$/],
+              useCaseSensitiveFileNames: true,
             },
           },
         ],

@@ -18,17 +18,26 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(less|css)$/i,
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              // sourceMap: false,
-            },
+            // TODO:生产环境构建有问题
+            // options: {},
           },
-          'postcss-loader',
-          'less-loader',
+          {
+            loader: 'postcss-loader',
+            options: {},
+          },
+          {
+            loader: 'less-loader',
+            options: {},
+          },
         ],
       },
       // webpack@5资源模块

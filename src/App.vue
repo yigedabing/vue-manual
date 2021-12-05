@@ -13,7 +13,7 @@ export default class App extends Vue {
 
   created(): void {
     console.log('========= App.vue created !===========');
-    this.title = false;
+    // this.title = false;
   }
 
   mounted(): void {
