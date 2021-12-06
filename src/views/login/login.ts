@@ -6,6 +6,7 @@ export default class Login extends Vue {
   isLoading = false;
   userName = '张三';
   phone = '17521345099';
+  dateRange: Date[] | null = null;
 
   @Inject()
   getTitle!: () => string;
@@ -18,6 +19,9 @@ export default class Login extends Vue {
   mounted(): void {
     const msg = this.say('你好， ts');
     console.log('login.ts', msg);
+    if (this.dateRange?.length) {
+      console.log('---dateRange---');
+    }
   }
 
   async submitForm(): Promise<void> {
