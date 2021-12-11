@@ -1,4 +1,4 @@
-# webpack-vue
+# webpack-vue 项目，适用于 vue+js 开发的项目打算引入 ts 开发，体验 ts 魅力的童鞋哈！！！兼容 js+ ts
 
 ## webpack5+ + vue2+
 
