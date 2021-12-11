@@ -33,5 +33,9 @@ const app = new Vue({
 });
 
 // 方便控制台调试代码
-// @ts-ignore
-window.__app__ = app;
+Object.defineProperty(window, '__app__', {
+  configurable: false,
+  writable: false,
+  enumerable: false,
+  value: app,
+});

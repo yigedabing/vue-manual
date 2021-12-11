@@ -1,6 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const path = require('path');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -14,7 +14,7 @@ module.exports = merge(common, {
   devServer: {
     static: 'dist',
     compress: false,
-    port: 9000,
+    port: 9001,
     hot: true,
     // 解决history模式下页面刷新404现象
     historyApiFallback: true,
@@ -25,8 +25,23 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(less|css)$/i,
-        use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+        test: /\.css$/i,
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'postcss-loader',
+          'less-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, '../src/color.less'),
+            },
+          },
+        ],
       },
       // webpack@5资源模块
       {
@@ -49,14 +64,7 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        messages: [`=================== 开发环境编译成功！ =================`],
-      },
-      clearConsole: true,
-    }),
-  ],
+  plugins: [],
   optimization: {
     chunkIds: 'named',
   },

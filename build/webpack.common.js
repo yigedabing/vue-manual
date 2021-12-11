@@ -1,14 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname),
   entry: {
     main: ['../src/main.ts'],
   },
-  stats: 'normal',
+  // https://webpack.js.org/configuration/stats/#root
+  stats: 'minimal',
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
@@ -79,7 +80,21 @@ module.exports = {
       title: '手动创建vue项目',
       template: path.resolve(__dirname, '../public/index.html'),
     }),
-    // TODO:
-    // new ESLintPlugin(),
+    new ForkTsCheckerPlugin({
+      formatter: 'codeframe',
+      typescript: {
+        configFile: '../tsconfig.json',
+        extensions: {
+          vue: {
+            enabled: true,
+            compiler: 'vue-template-compiler',
+          },
+        },
+      },
+      eslint: {
+        files: ['../src/**/*.ts', '../src/*.ts'],
+        enabled: true,
+      },
+    }),
   ],
 };

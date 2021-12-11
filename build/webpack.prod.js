@@ -1,11 +1,10 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const path = require('path');
+// const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -40,6 +39,12 @@ module.exports = merge(common, {
           {
             loader: 'less-loader',
             options: {},
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, '../src/color.less'),
+            },
           },
         ],
       },

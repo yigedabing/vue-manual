@@ -78,6 +78,7 @@ export default class PageV1 extends Vue {
 <style lang="less" scoped>
 .page-v1 {
   padding: 10px;
+  color: @color-primary;
   #circle-echarts {
     width: 800px;
     height: 600px;

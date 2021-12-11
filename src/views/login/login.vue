@@ -25,6 +25,7 @@
   padding: 20px;
   text-align: center;
   font-size: 16px;
+  color: @color-primary;
   .icon {
     margin: 20px 0;
   }
@@ -32,6 +33,9 @@
     width: 50%;
     max-width: 300px;
     margin: 50px auto;
+    ::v-deep .el-input-a {
+      color: red;
+    }
   }
 }
 </style>

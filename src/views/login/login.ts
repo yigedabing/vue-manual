@@ -7,6 +7,7 @@ export default class Login extends Vue {
   userName = '张三';
   phone = '17521345099';
   dateRange: Date[] | null = null;
+  notUse = 1;
 
   @Inject()
   getTitle!: () => string;
