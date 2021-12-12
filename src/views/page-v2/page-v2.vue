@@ -1,7 +1,7 @@
 <template>
   <div class="page-v2">
     <hello-world :title="title">
-      <el-button type="primary" slot="button" @click="goNewPage">去第三期</el-button>
+      <el-button type="primary" slot="button" @click="goNewPage"> 去第三期 </el-button>
     </hello-world>
     <div class="msg">{{ msg }}</div>
     <el-button type="primary" size="small" class="button" @click="update">更新信息</el-button>
@@ -53,14 +53,14 @@
 </template>
 
 <script>
-import helloWorld from '@/components/hello-wrold.vue';
+import helloWorld from '@/components/hello-world.vue';
 
 export default {
   name: 'page-v2',
   components: { helloWorld },
   data() {
     return {
-      title: '欢迎王者归来！',
+      title: '欢迎王者归来!',
       msg: Math.random(),
       list: [1, 2, { id: 1 }, [{ id: 12 }, { id: 13 }]],
     };
