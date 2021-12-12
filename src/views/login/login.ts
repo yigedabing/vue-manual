@@ -20,8 +20,9 @@ export default class Login extends Vue {
   mounted(): void {
     const msg = this.say('你好， ts');
     console.log('login.ts', msg);
-    if (this.dateRange?.length) {
+    if (!this.dateRange?.length) {
       console.log('---dateRange---');
+      this.notUse = 2;
     }
   }
 

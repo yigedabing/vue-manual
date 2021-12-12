@@ -18,9 +18,6 @@ module.exports = merge(common, {
     hot: true,
     // 解决history模式下页面刷新404现象
     historyApiFallback: true,
-    client: {
-      progress: true,
-    },
   },
   module: {
     rules: [

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { isPhone } from '@/utils';
+import { isPhone, isEmail } from '@/utils';
 
 export default {
   name: 'page-v5',
@@ -28,7 +28,7 @@ export default {
       };
       fn(name, list);
     },
-    isPhone() {
+    isPhone(phone) {
       return isPhone(phone);
     },
     isEmail(email) {

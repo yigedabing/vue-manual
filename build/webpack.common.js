@@ -92,7 +92,7 @@ module.exports = {
         },
       },
       eslint: {
-        files: ['../src/**/*.ts', '../src/*.ts'],
+        files: ['../src/**/*.ts', '../src/*.ts', '../src/**/*.vue'],
         enabled: true,
       },
     }),
