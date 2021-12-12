@@ -54,6 +54,7 @@
 
 <script>
 import helloWorld from '@/components/hello-world.vue';
+import { isEmail } from '@/utils';
 
 export default {
   name: 'page-v2',
@@ -68,6 +69,7 @@ export default {
   created() {
     const list = [...this.list];
     console.log(list === this.list);
+    console.log('是邮箱么 ？', isEmail('14590@qq.com'));
   },
   methods: {
     update() {

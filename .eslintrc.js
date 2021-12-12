@@ -1,4 +1,9 @@
 module.exports = {
+  root: true,
+  env: {
+    // 避免通过require某个模块时报错
+    node: true,
+  },
   // parser: '@typescript-eslint/parser',
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -6,11 +11,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  extends: [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['plugin:vue/essential', 'eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   rules: {
     // 0 = off, 1 = warn, 2 = error
     // place to specify ESLint rules - can be used to overwrite rules specified from the extended configs

@@ -64,5 +64,6 @@ module.exports = merge(common, {
   plugins: [],
   optimization: {
     chunkIds: 'named',
+    usedExports: true,
   },
 });
