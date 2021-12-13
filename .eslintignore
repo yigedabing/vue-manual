@@ -1,0 +1,5 @@
+# 跳过eslint检测资源
+
+node_modules/
+
+dist/

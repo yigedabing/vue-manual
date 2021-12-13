@@ -74,7 +74,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       context: path.resolve(__dirname),
-      minify: false,
+      minify: true,
       title: '手动创建vue项目',
       template: path.resolve(__dirname, '../public/index.html'),
     }),
