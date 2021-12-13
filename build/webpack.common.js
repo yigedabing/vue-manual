@@ -13,7 +13,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    // 打包前清除dist目录下的资源文件
     clean: true,
   },
   resolve: {
@@ -63,7 +62,6 @@ module.exports = {
             options: {
               // 仅转译，加快编译速度
               transpileOnly: true,
-              // .vue文件添加ts后缀，否则无法正常识别单文件vue中的script标签中的代码
               appendTsSuffixTo: [/\.vue$/],
               useCaseSensitiveFileNames: true,
             },

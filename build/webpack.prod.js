@@ -24,22 +24,9 @@ module.exports = merge(common, {
         test: /\.less$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          // 'css-loader',
-          // 'postcss-loader',
-          // 'less-loader',
-          {
-            loader: 'css-loader',
-            // TODO:生产环境构建有问题
-            // options: {},
-          },
-          {
-            loader: 'postcss-loader',
-            options: {},
-          },
-          {
-            loader: 'less-loader',
-            options: {},
-          },
+          'css-loader',
+          'postcss-loader',
+          'less-loader',
           {
             loader: 'sass-resources-loader',
             options: {
@@ -48,11 +35,17 @@ module.exports = merge(common, {
           },
         ],
       },
-      // webpack@5资源模块
+      // webpack@5资源模块 图片
       {
-        test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
+        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
         type: 'asset',
       },
+      // 等价于file-loader处理 svg
+      {
+        test: /\.(svg)(\?.*)?$/,
+        type: 'asset/resource',
+      },
+      // fonts
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'javascript/auto',
@@ -61,7 +54,6 @@ module.exports = merge(common, {
             loader: 'file-loader',
             options: {
               esModule: false,
-              // 字体图标输出文件名
               name: 'fonts/[name].[contenthash:8].[ext]',
             },
           },
@@ -84,7 +76,6 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
-    // 模块连接
     concatenateModules: true,
     providedExports: true,
     usedExports: true,
@@ -122,7 +113,7 @@ module.exports = merge(common, {
         },
       },
     },
-    // '...' 使用webpack@5默认js压缩工具 TerserPlugin
+    // '...' 使用webpack@5默认js压缩工具TerserPlugin
     minimizer: [new CssMinimizerPlugin(), '...'],
     // minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },

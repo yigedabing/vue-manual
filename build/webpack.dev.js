@@ -8,7 +8,6 @@ module.exports = merge(common, {
   output: {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
-    // 图片输出文件名
     assetModuleFilename: 'images/[name][ext][query]',
   },
   devServer: {
@@ -40,25 +39,38 @@ module.exports = merge(common, {
           },
         ],
       },
-      // webpack@5资源模块
+      // webpack@5资源模块 图片
       {
-        test: /\.(jpeg|png|jpg|gif|webp|svg)$/i,
+        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
         type: 'asset',
       },
+      // 等价于file-loader处理 svg
       {
-        test: /\.(ttf|woff)$/i,
+        test: /\.(svg)(\?.*)?$/,
+        type: 'asset/resource',
+      },
+      // fonts
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'javascript/auto',
         use: [
           {
             loader: 'file-loader',
             options: {
               esModule: false,
-              // 字体图标输出文件名
               name: 'fonts/[name].[ext]',
             },
           },
         ],
       },
+      // TODO:
+      // {
+      //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+      //   type: 'asset',
+      //   generator: {
+      //     filename: 'fonts/[name].[ext]',
+      //   },
+      // },
     ],
   },
   plugins: [],
