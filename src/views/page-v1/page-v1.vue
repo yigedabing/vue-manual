@@ -4,7 +4,7 @@
     <div>{{ 'generateId =' + generateId }}</div>
     <div id="circle-echarts"></div>
     <el-button type="primary" @click="openDialog">添加信息</el-button>
-    <!-- dialog -->
+    <!-- 添加信息dialog -->
     <DialogAddMessage ref="dialogAddMessage"></DialogAddMessage>
   </div>
 </template>
