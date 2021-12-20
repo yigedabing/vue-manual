@@ -1,11 +1,14 @@
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import { isPhone } from '@/utils';
+import { login } from '@/service/http/api/api';
+import { ILoginParam } from '@/service/http/api/api-type';
 
 @Component
 export default class Login extends Vue {
   isLoading = false;
   userName = '张三';
   phone = '17521345099';
+  password = '';
   dateRange: Date[] | null = null;
   notUse = 1;
 
@@ -54,13 +57,14 @@ export default class Login extends Vue {
   }
 
   private async login(): Promise<boolean> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const isOk = Math.random() > 0.2;
-        console.log('isOk= ', isOk);
-        resolve(isOk);
-      }, 2000);
-    });
+    const param: ILoginParam = {
+      username: this.userName,
+      password: this.password,
+      // loginType: '1',
+    };
+    const res = await login(param);
+    console.log(res);
+    return res.code === 200;
   }
 
   private goHome(): void {

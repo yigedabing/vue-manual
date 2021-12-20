@@ -1,4 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
+import { requestInterceptor } from '../interceptor/request-interceptor';
+import { responseInterceptor } from '../interceptor/response-interceptor';
 
 export interface IDataWithError<T> {
   code: number;
@@ -50,8 +52,20 @@ class HttpService {
     return this.axiosInstance.request(config);
   }
 
+  // 添加拦截器
   private addInterceptors(): void {
-    // 添加拦截器
+    // 请求拦截器
+    this.axiosInstance.interceptors.request.use(requestInterceptor, (error) => {
+      console.log('请求拦截器error: ', error);
+    });
+
+    // 响应拦截器
+    this.axiosInstance.interceptors.response.use(
+      responseInterceptor,
+      (error) => {
+        console.log('响应拦截器error: ', error);
+      }
+    );
   }
 }
 

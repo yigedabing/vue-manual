@@ -7,6 +7,9 @@
       <el-form-item label="手机号">
         <el-input v-model="phone"></el-input>
       </el-form-item>
+      <el-form-item label="密码">
+        <el-input v-model="password"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm">
           <span>登录</span>
