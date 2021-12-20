@@ -1,10 +1,12 @@
 import cloneDeep from 'lodash/cloneDeep';
 import * as echarts from 'echarts';
 import { generateId } from '@/utils';
-import { Component, Vue } from 'vue-property-decorator';
-import { IMenuItem } from '@/types/ui-type';
+import { Component, Ref, Vue } from 'vue-property-decorator';
+import DialogAddMessage from '../components/dialog-add-message/dialog-add-message.vue';
 
-@Component
+@Component({
+  components: { DialogAddMessage },
+})
 export default class PageV1 extends Vue {
   obj = {
     id: 1,
@@ -12,6 +14,8 @@ export default class PageV1 extends Vue {
   };
   list = ['1', 2, { id: 1 }];
   generateId = '';
+
+  @Ref('dialogAddMessage') dialogAddMessage!: any;
 
   created() {
     const copy = cloneDeep(this.obj);
@@ -28,8 +32,16 @@ export default class PageV1 extends Vue {
     this.initChartView();
   }
 
+  doSearch() {
+    console.log('do search');
+  }
+
   notUseFunction() {
     console.log('not use fn');
+  }
+
+  openDialog() {
+    this.dialogAddMessage.openDialog();
   }
 
   private initChartView() {

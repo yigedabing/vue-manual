@@ -3,6 +3,9 @@
     <div>page-v1</div>
     <div>{{ 'generateId =' + generateId }}</div>
     <div id="circle-echarts"></div>
+    <el-button type="primary" @click="openDialog">添加信息</el-button>
+    <!-- dialog -->
+    <DialogAddMessage ref="dialogAddMessage"></DialogAddMessage>
   </div>
 </template>
 

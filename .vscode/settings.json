@@ -7,6 +7,7 @@
     "iconfont",
     "Parens",
     "Prefetch",
+    "systemjs",
     "vuex"
   ]
 }
