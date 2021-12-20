@@ -14,7 +14,7 @@ class HttpService {
   private readonly baseURL = 'https://api.mabangerp.com';
 
   constructor() {
-    console.log('------init HttpService --------');
+    console.log('------init HttpService --------', process.env.NODE_ENV);
 
     this.axiosInstance = axios.create({
       timeout: this.timeout,
