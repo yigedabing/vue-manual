@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
-import { requestInterceptor } from '../interceptor/request-interceptor';
-import { responseInterceptor } from '../interceptor/response-interceptor';
+import { headerInterceptor } from '../interceptor/header-interceptor';
 
 export interface IDataWithError<T> {
   code: number;
@@ -9,20 +8,16 @@ export interface IDataWithError<T> {
 }
 
 class HttpService {
-  private readonly axiosInstance!: AxiosInstance;
+  private readonly http!: AxiosInstance;
   private readonly timeout = 5 * 60 * 1000;
   private readonly baseURL = 'https://api.mabangerp.com';
 
   constructor() {
-    console.log('------init HttpService --------', process.env.NODE_ENV);
-
-    this.axiosInstance = axios.create({
+    this.http = axios.create({
       timeout: this.timeout,
       baseURL: this.baseURL,
+      withCredentials: false,
     });
-
-    this.axiosInstance.defaults.headers.post['Content-Type'] =
-      'application/x-www-form-urlencoded';
 
     this.addInterceptors();
   }
@@ -35,37 +30,37 @@ class HttpService {
   ): Promise<IDataWithError<T>> {
     const config: AxiosRequestConfig = { method, url, ...axiosRequestConfig };
 
-    switch (method.toLowerCase()) {
-      case 'get':
-        config.params = param;
-        break;
-      case 'post':
-      case 'put':
-      case 'patch':
-        config.data = param;
-        break;
-      default:
-        config.data = param;
-        break;
+    if (method === 'get') {
+      config.params = param;
+    } else {
+      config.data = param;
     }
 
-    return this.axiosInstance.request(config);
+    return this.send<T>(config);
+  }
+
+  private send<T>(config: AxiosRequestConfig): Promise<IDataWithError<T>> {
+    return new Promise((resolve, reject) => {
+      this.http
+        .request(config)
+        .then(
+          (response) => {
+            const data = response.data as IDataWithError<T>;
+            resolve(data);
+          },
+          (error) => {
+            reject(error);
+          }
+        )
+        .catch((reason) => {
+          reject(reason);
+        });
+    });
   }
 
   // 添加拦截器
   private addInterceptors(): void {
-    // 请求拦截器
-    this.axiosInstance.interceptors.request.use(requestInterceptor, (error) => {
-      console.log('请求拦截器error: ', error);
-    });
-
-    // 响应拦截器
-    this.axiosInstance.interceptors.response.use(
-      responseInterceptor,
-      (error) => {
-        console.log('响应拦截器error: ', error);
-      }
-    );
+    headerInterceptor(this.http);
   }
 }
 
