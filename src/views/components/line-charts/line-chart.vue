@@ -20,7 +20,7 @@ export default {
     };
   },
   created() {
-    var a = 1;
+    const a = 1;
     console.log(`created`, a);
   },
 };

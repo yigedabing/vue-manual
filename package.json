@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "webpack serve --config ./build/webpack.dev.js --progress",
     "build": "webpack --config ./build/webpack.prod.js --progress",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",

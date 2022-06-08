@@ -39,7 +39,7 @@ export default class Home extends Vue {
   }
 
   mounted() {
-    var a = 2;
+    const a = 2;
     console.log('mounted');
   }
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   // parser: '@typescript-eslint/parser',
   parser: 'vue-eslint-parser',
@@ -20,5 +21,6 @@ module.exports = {
     // https://eslint.vuejs.org/rules/
     'vue/component-definition-name-casing': 'off',
     'vue/multi-word-component-names': 'off',
+    ' @typescript-eslint/no-this-alias': 'off',
   },
 };
