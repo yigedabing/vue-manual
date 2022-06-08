@@ -26,6 +26,7 @@ export default class PageV1 extends Vue {
 
   mounted() {
     this.initChartView();
+    const a = 1;
   }
 
   notUseFunction() {
