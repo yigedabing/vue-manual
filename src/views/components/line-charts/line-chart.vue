@@ -20,8 +20,7 @@ export default {
     };
   },
   created() {
-    var a = 1;
-    console.log(`created`, a);
+    var a = 1;console.log(`created`,a);
   },
 };
 </script>
