@@ -6,7 +6,7 @@
       啊的防晒霜
     </head>
     <span>
-      {{ id }}
+      {{id}}
     </span>
   </div>
 </template>
