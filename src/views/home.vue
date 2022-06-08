@@ -37,6 +37,11 @@ export default class Home extends Vue {
       { id: '9', name: '第九期', path: '/page-v9' },
     ];
   }
+
+  mounted() {
+    var a = 2;
+    console.log('mounted');
+  }
 }
 </script>
 
