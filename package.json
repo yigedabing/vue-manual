@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --config ./build/webpack.dev.js --progress",
-    "build": "webpack --config ./build/webpack.prod.js --progress"
+    "build": "webpack --config ./build/webpack.prod.js --progress",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
@@ -60,10 +61,5 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0",
     "webpack-merge": "^5.8.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
