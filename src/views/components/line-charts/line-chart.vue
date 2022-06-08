@@ -1,12 +1,12 @@
 <template>
   <div class="line-chart">
     <div>测试按用户</div>
-
+    <!--  -->
     <head>
       啊的防晒霜
     </head>
     <span>
-      {{id}}
+      {{ id }}
     </span>
   </div>
 </template>
@@ -19,9 +19,9 @@ export default {
       id: 'abc',
     };
   },
-  created(){
-    console.log(`created`)
-  }
+  created() {
+    console.log(`created`);
+  },
 };
 </script>
 
